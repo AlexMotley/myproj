@@ -1,0 +1,37 @@
+{% extends 'main/layout.html' %}
+
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    
+    <div class="features">
+        <h1>ТЕМЫ</h1>
+        <a href="{% url 'create' %}"><button class="btn btn-info">Создать тему</button></a>
+    
+        {% if topics %}
+            {% for el in topics %}
+            <div class="alert alert-warning">
+                <h2>{{ el.topic_title }}</h2>
+                {% if el.words %}
+                    {% for word in el.words.all %}
+                        <p class="words">{{ word }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>Нет слов</p>
+                {% endif %}
+            </div>
+
+            {% endfor %}
+            <!-- <ul> -->
+                <!-- {% for word in words %}
+                    <li>{{ word }}</li>
+                {% endfor %} -->
+            <!-- </ul> -->
+        {% else %}
+            <p>Нет записей</p>
+        {% endif %}
+    
+    </div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% expands 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div>
+        <p>{% topic.title %}</p>
+        <p>{% topic.words %}</p>
+    </div>
+{% endblock %}
+

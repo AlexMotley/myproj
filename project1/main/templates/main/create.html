@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+    
+    <div class="features">
+        <h1>ДОБАВЛЕНИЕ ТЕМЫ</h1>
+        <form method="post" class="create_topic">
+            {% csrf_token %}
+            <input type="text" method="POST" placeholder="Название темы"  name="topic_name"><br>
+            
+            {{ form.word }}<br>
+
+            <button class="btn btn-success" type="submit">Создать тему</button>
+        </form>
+    </div>
+
+{% endblock %}

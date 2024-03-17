@@ -1,0 +1,15 @@
+{% expands 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div>
+        {% if words %}
+            {% for word in words %}
+                <p>{% word %}</p>
+        {% else %}
+            <p>Записей нет</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
